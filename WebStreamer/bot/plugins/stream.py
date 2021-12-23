@@ -28,9 +28,7 @@ async def media_receive_handler(_, m: Message):
     log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
     stream_link = Var.URL + str(log_msg.message_id) + '/' +quote_plus(file_name) if file_name else ''
     await m.reply_text(
-        text="<i><u>فایل شما اپلود شد !</u></i>\n
-<b>📥 لینک دانلود :</b> <i>{}</i>\n
-<b>🚸 لینک دانلود فایل منقضی نمی شود</b>".format(stream_link),
+    text="Download Link: {}".format(stream_link),
         quote=True,
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('دانلود فایل', url=stream_link)]])
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Download', url=stream_link)]])
     )
