@@ -31,8 +31,7 @@ async def media_receive_handler(_, m: Message):
     text="Your file uploaded!".format(stream_link),
         quote=True,
         reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton('Download', url=stream_link),
-            InlineKeyboardButton(f'm_mahdihajizadeh', url='https://telegram.me/m_mahdihajizadeh')
+            InlineKeyboardButton('Download', url=stream_link)
         ]])
 
     )
